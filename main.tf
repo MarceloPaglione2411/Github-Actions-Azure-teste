@@ -1,3 +1,19 @@
+data "azurerm_resource_group" "RG1" {
+  name = "Terraformdemo"
+}
+output "id" {
+  value = data.azurerm_resource_group.RG1.id
+}
+data "azurerm_storage_account" "SR1" {
+  name                = "terraformcodemarcelo"
+  resource_group_name = "Terraformdemo"
+}
+
+data "azurerm_storage_container" "container" {
+  name               = "tfstatefile"
+  storage_account_id = data.azurerm_storage_account.SR1.id
+}
+
 #Criação RG
 resource "azurerm_resource_group" "mod_resource_group1" {
   name     = var.rs_name
