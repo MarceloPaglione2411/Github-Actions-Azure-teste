@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "mod_resource_group1" {
 #Criação VNET + SUBNETS
 resource "azurerm_virtual_network" "MOD_VNET01" {
   name                = "VNET01"
-  location            = "eastus"
+  location            = "east us"
   resource_group_name = "marcelofile2"
   address_space       = ["10.0.0.0/16"]
 }
