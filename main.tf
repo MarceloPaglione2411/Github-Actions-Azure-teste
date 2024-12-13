@@ -1,28 +1,13 @@
-#qq
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~>3.0"
-    }
+ terraform {
+ backend "azurerm" {
+    resource_group_name  = "rg-state-remote"
+    storage_account_name = "srstateremote"
+    container_name       = "terraform"
+    key                  = "terraform.tfstate"
+    access_key           = "MVcSLkFdghawzjV5T9xfzmCEiQhmL0iAR9VjkT9ZhXbGxriU/0H69XY730JspKqC8hsAvCnFxEz8+ASt7zGQyg=="
   }
-  backend "azurerm" {
-      resource_group_name  = "tfstate"
-      storage_account_name = "tfstateigt6h"
-      container_name       = "tfstate"
-      key                  = "terraform.tfstate"
-  }
-
 }
 
-provider "azurerm" {
-  features {}
-}
-
-resource "azurerm_resource_group" "state-demo-secure" {
-  name     = "state-demo"
-  location = "eastus"
-}
 
 #Criação RG
 resource "azurerm_resource_group" "mod_resource_group1" {
