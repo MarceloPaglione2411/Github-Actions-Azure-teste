@@ -1,4 +1,4 @@
-Variables block
+#Variables block
 variable "rs_name" {
     description = "Nome Resource group"
     type = string
