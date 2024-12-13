@@ -33,11 +33,7 @@ jobs:
     - name: Azure Login
       uses: azure/login@v2
       with:
-        client-id: ${{ secrets.AZURE_AD_CLIENT_ID }}
-        tenant-id: ${{ secrets.AZURE_AD_TENANT_ID }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRITPION_ID }}
-        clientSecret: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
-
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
                      
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
