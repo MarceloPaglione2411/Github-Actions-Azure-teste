@@ -4,7 +4,7 @@
     storage_account_name = "srstateremote"
     container_name       = "terraform"
     key                  = "terraform.tfstate"
-    access_key           = "MVcSLkFdghawzjV5T9xfzmCEiQhmL0iAR9VjkT9ZhXbGxriU/0H69XY730JspKqC8hsAvCnFxEz8+ASt7zGQyg=="
+    access_key           = ""
   }
 }
 
